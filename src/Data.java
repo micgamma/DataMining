@@ -1,11 +1,22 @@
+/**
+ La classe Data contiene l'insieme delle transazioni 
+ consente il test delle classi implementate e permette la stampa dell'insieme di transazioni.
+ */
+
 public class Data {
-	private Object data [][];        			//Ogni riga della matrice è una transazione
-	private int numberOfExamples;				//Numero di righe in data
-	private Attribute explanatorySet[];			//Aggregazione
+	
+	/** Tabella delle transazioni */
+	private Object data [][];      
+	
+	/** Numero delle transazioni */
+	private int numberOfExamples;	
+	
+	/** Insieme degli attributi */
+	private Attribute explanatorySet[];			
+	
 	
 	Data(){
 		
-		//data
 		data = new Object [14][5];
 
 		//Inserimento transazioni nella tabella
@@ -51,16 +62,20 @@ public class Data {
 		   
 		   //Tupla 14
 		   data[i][0]="Rain"; data[i][1]="Mild"; data[i][2]="High"; data[i][3]="Strong"; data[i][4]="No"; i++;
-		  	   
-		   // numberOfExamples
+		  
+		   
+		 // numberOfExamples
 		 numberOfExamples=14;		 
 		 
-		//explanatory Set
+		
+		//explanatory Set  
 		explanatorySet = new Attribute[5];	
+		
 		
 		//Attributo 1
 		String outLookValues[]=new String[3];
 		
+		//Dominio dell'attributo outlook
 		outLookValues[0]="Overcast";
 		outLookValues[1]="Rain";
 		outLookValues[2]="Sunny";
@@ -98,30 +113,48 @@ public class Data {
 		playTennisValues[0]="Yes";
 		playTennisValues[1]="No";
 						
-		explanatorySet[4] = new DiscreteAttribute("PlayTennis",4, playTennisValues);			
+		explanatorySet[4] = new DiscreteAttribute("PlayTennis",4, playTennisValues);
+					
 	}
 	
+	/** Restituisce il numero di transazioni 
+	 * @return		numero di transazioni
+	 * */
 	int getNumberOfExamples()
 	{
 		return numberOfExamples;
 	}
 	
+	/** Restituisce il numero di attributi della transazione 
+	 * @return		numero attributi transazione
+	 * */
 	int getNumberOfExplanatoryAttributes()
 	{
 		return explanatorySet.length;
-	}	
+	}
 	
+	
+	/** Restituisce il valore di un attributo della transazione
+	 * @param exampleIndex			indice della transazione
+	 * @param attributeIndex		indice dell'attributo della transazione
+	 * @return						valore attributo della transazione
+	 * */
 	Object getAttributeValue(int exampleIndex, int attributeIndex)
 	{
 		return data[exampleIndex][attributeIndex];
 	}
 	
+	/** Restituisce l'insieme degli attributi
+	 * @return 		insieme degli attributi della generica transazione con i relativi domini
+	 *  */
 	Attribute[] getAttributeSchema()
 	{
 		return explanatorySet;
 	}
 	
-	
+	/** Restituisce la rappresentazione della classe sotto-forma di stringa 
+	 * 
+	 * */
 	public String toString()
 	{
 		String result = "";
@@ -134,7 +167,7 @@ public class Data {
 	
 		for(int i=0; i<getNumberOfExamples(); i++)
 		{
-			result += (i +1) + " : ";
+			result += (i+1) + " : ";
 			for(int j=0; j<getNumberOfExplanatoryAttributes(); j++)
 				result += getAttributeValue(i,j) + " , ";
 			
@@ -144,8 +177,12 @@ public class Data {
 		return result;
 	}
 
-	public static void main(String args[]){
+
+	
+	public static void main(String args[])
+	{
 		Data trainingSet=new Data();
 		System.out.println(trainingSet);
 	}
+
 }
