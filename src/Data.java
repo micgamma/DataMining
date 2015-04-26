@@ -176,13 +176,13 @@ public class Data {
 		
 		return result;
 	}
-
-
 	
-	public static void main(String args[])
+	Tuple getItemSet(int index)
 	{
-		Data trainingSet=new Data();
-		System.out.println(trainingSet);
+		Tuple tuple=new Tuple(explanatorySet.length);
+		for(int i=0;i<explanatorySet.length;i++)
+			tuple.add(new DiscreteItem((DiscreteAttribute)explanatorySet[i], (String)data[index][i]),i);
+		return tuple;
 	}
 
 }
