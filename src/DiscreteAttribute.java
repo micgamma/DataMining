@@ -10,7 +10,7 @@ class DiscreteAttribute extends Attribute
 	
 	//Metodi
 	
-	/** Costruttore dell'attributo discreto , inizializza le proprietà dell'attributo discreto 
+	/** Crea un attributo discreto, con nome, indice e dominio assegnato
 	 * 
 	 * @param name			nome dell'attributo discreto
 	 * @param index			indice dell'attributo discreto
