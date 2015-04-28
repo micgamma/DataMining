@@ -14,8 +14,6 @@ public class MainTest {
 		int numIter=qt.compute(data);
 		System.out.println("Number of clusters:"+numIter);
 		System.out.println(qt.getC().toString(data));
-		
-		
 	}
 
 }

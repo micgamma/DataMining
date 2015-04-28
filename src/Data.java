@@ -1,6 +1,6 @@
 /**
- La classe Data contiene l'insieme delle transazioni 
- consente il test delle classi implementate e permette la stampa dell'insieme di transazioni.
+ * Modella la tabella delle transazioni
+ * fornendo informazioni anche sullo schema della tabella stessa
  */
 
 public class Data {
@@ -11,10 +11,12 @@ public class Data {
 	/** Numero delle transazioni */
 	private int numberOfExamples;	
 	
-	/** Insieme degli attributi */
+	/** Insieme degli attributi della tabella delle transazioni */
 	private Attribute explanatorySet[];			
 	
-	
+	/**
+	 * Crea una nuova tabella delle transazioni
+	 */
 	Data(){
 		
 		data = new Object [14][5];
@@ -117,16 +119,16 @@ public class Data {
 					
 	}
 	
-	/** Restituisce il numero di transazioni 
-	 * @return		numero di transazioni
+	/** Restituisce il numero di transazioni presenti nella tabella delle transazioni
+	 * @return		Numero di transazioni all'interno della tabella
 	 * */
 	int getNumberOfExamples()
 	{
 		return numberOfExamples;
 	}
 	
-	/** Restituisce il numero di attributi della transazione 
-	 * @return		numero attributi transazione
+	/**Restituisce il numero di attributi della transazione 
+	 * @return		numero di attributi di cui si compone la transazione
 	 * */
 	int getNumberOfExplanatoryAttributes()
 	{
@@ -134,26 +136,27 @@ public class Data {
 	}
 	
 	
-	/** Restituisce il valore di un attributo della transazione
-	 * @param exampleIndex			indice della transazione
+	/**Restituisce il valore di un attributo di una data transazione
+	 * @param exampleIndex			indice della transazione 
 	 * @param attributeIndex		indice dell'attributo della transazione
-	 * @return						valore attributo della transazione
+	 * @return						valore dell'attributo cercato nella transazione
 	 * */
 	Object getAttributeValue(int exampleIndex, int attributeIndex)
 	{
 		return data[exampleIndex][attributeIndex];
 	}
 	
-	/** Restituisce l'insieme degli attributi
+	/** Restituisce lo schema della tabella delle transazioni, quindi l'insieme di attributi che compongono
+	 *  una generica transazione 
 	 * @return 		insieme degli attributi della generica transazione con i relativi domini
-	 *  */
+	 * */
 	Attribute[] getAttributeSchema()
 	{
 		return explanatorySet;
 	}
 	
-	/** Restituisce la rappresentazione della classe sotto-forma di stringa 
-	 * 
+	/** Restituisce la tabella delle transazioni indicando gli attributi e i valori che questi assumono in ogni transazione 
+	 * @return Stringa rappresentante l'intera tabella delle transazioni
 	 * */
 	public String toString()
 	{
@@ -177,6 +180,11 @@ public class Data {
 		return result;
 	}
 	
+	/**
+	 * Restituisce una riga della tabella delle transazioni sotto forma di tupla
+	 * @param index indice della riga da restituire
+	 * @return Tupla contenente i dati della transazione richiesta
+	 */
 	Tuple getItemSet(int index)
 	{
 		Tuple tuple=new Tuple(explanatorySet.length);
