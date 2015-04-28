@@ -2,7 +2,6 @@
  * Insieme dei cluster ottenuti da una tabella delle transazioni
  */
 
-
 class ClusterSet {
 	
 	//Attributi
@@ -14,7 +13,7 @@ class ClusterSet {
 	//Metodi
 	
 	/**
-	 * Costruttore di default
+	 * Crea un ClusterSet vuoto
 	 */
 	ClusterSet()
 	{
