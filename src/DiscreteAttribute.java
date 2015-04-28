@@ -1,5 +1,4 @@
-/** Classe concreta DiscreteAttribute che estende la classe Attribute 
- * e rappresenta un attributo discreto (categorico) 
+/** Rappresenta un attributo discreto, quindi con dominio finito
  */
 class DiscreteAttribute extends Attribute
 {

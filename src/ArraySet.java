@@ -26,8 +26,8 @@ class ArraySet {
 	/**
 	 * Aggiunge un elemento cambiando il relativo valore booleano nell'array. Nel caso in cui sia stata raggiunta
 	 * la dimensione massima, questa viene raddoppiata  
-	 * @param i		elemento dell'ArraySet da inserire cambiando il valore del rispettivo flag a <b>true</b>
-	 * @return		booleano che indica se è stata modificata la struttura del set
+	 * @param i		Elemento dell'ArraySet da inserire cambiando il valore del rispettivo flag a <b>true</b>
+	 * @return		Flag che indica se è stata modificata la struttura del set
 	 */
 	boolean add(int i){
 		if(i>=set.length)
@@ -50,9 +50,9 @@ class ArraySet {
 	}
 	
 	/**
-	 * Elimina un elemento modificando il relativo valore booleano nell' array
-	 * @param i		indice elemento da eliminare
-	 * @return		booleano che indica se l'elemento è stato eliminato o meno
+	 * Elimina un elemento modificando il relativo valore booleano nell'array
+	 * @param i		Indice elemento da eliminare
+	 * @return		Flag che indica se l'elemento è stato eliminato o meno
 	 */
 	boolean delete(int i){
 		if(i<size){
@@ -74,7 +74,7 @@ class ArraySet {
 	}
 	
 	/**
-	 * Ritorna il valore di verità in una certa posizione dell' array
+	 * Restituisce un flag che indica se l'i-esimo elemento è contenuto o meno nell'ArraySet
 	 * @param i		indice del valore di verità ricercato
 	 * @return		valore di verità dell'elemento in posizione i
 	 */
@@ -83,17 +83,17 @@ class ArraySet {
 	}
 	
 	/**
-	 * Ritorna la cardinalità dell' array
-	 * @return	cardinalità dell' array
+	 * Restituisce il numero di elementi contenuti nell'ArraySet
+	 * @return	cardinalità dell'ArraySet
 	 */
 	int size (){
 		return cardinality;
 	}
 	
 	/**
-	 * Ritorna un array di interi contenente gli indici dell'array set
-	 * che hanno valore di verità vero
-	 * @return	array delle posizioni vere
+	 * Restituisce un array di interi contenente le posizioni dell'ArraySet
+	 * che contengono un elemento (valore di verita <b>true</b>)
+	 * @return Insieme delle posizioni contenti valori di verità <b>true</b>
 	 */
 	int[] toArray(){
 		int a[]=new int[0];

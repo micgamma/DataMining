@@ -1,4 +1,4 @@
-/** Classe che modella gli attributi della transazione */
+/** Modella il generico attributo di una transazione */
 abstract class Attribute 
 {
 	//Attributi
@@ -11,7 +11,7 @@ abstract class Attribute
 	
 	//Metodi
 	
-	/** Costruttore dell'attributo , inizializza i parametri dell'attributo
+	/** Costruisce un attributo con nome e indice indicati
 	 * 
 	 * @param name			nome dell'attributo
 	 * @param index			indice dell'attributo
@@ -24,7 +24,7 @@ abstract class Attribute
 	
 	/** Restituisce il nome dell'attributo 
 	 * 
-	 * @return		nome dell'attributo
+	 * @return		Nome dell'attributo
 	 */
 	String getName()
 	{
@@ -33,7 +33,7 @@ abstract class Attribute
 	
 	/** Restituisce l'indice dell'attributo
 	 * 
-	 * @return		indice dell'attributo
+	 * @return		Indice dell'attributo
 	 */
 	int getIndex()
 	{
@@ -41,7 +41,8 @@ abstract class Attribute
 	}
 	
 	/** 
-	 * 
+	 * Restituisce una stringa che rappresenta l'attributo contenente il nome dell'attributo stesso
+	 * @return Stringa contenente il nome dell'attributo
 	 */
 	public String toString()
 	{

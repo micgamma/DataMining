@@ -1,10 +1,10 @@
 /**
- * Classe che modella un cluster, un insieme di tuple aventi 
+ * Classe che modella un cluster, un insieme di transazioni aventi 
  * distanza da un centroide al più uguale ad un raggio predefinito.
  */
 class Cluster {
 	/**
-	 * centroide del cluster: ovvero quella tupla che rappresenta il cluster*/
+	 * Centroide, ovvero quella transazione che rappresenta il cluster */
 	private Tuple centroid;
 	/**
 	 * ArraySet utilizzato per indicare la composizione del cluster*/
@@ -15,8 +15,8 @@ class Cluster {
 	}*/
 	
 	/**
-	 * Costruttore, inizializza il cluster come vuoto con centroide dato in input
-	 * @param centroid centroide del cluster
+	 * Crea un cluster vuoto con centroide fornito
+	 * @param centroid Centroide del cluster
 	 */
 	Cluster(Tuple centroid){
 		this.centroid=centroid;
@@ -33,9 +33,9 @@ class Cluster {
 	}
 	
 	/**
-	 * Aggiunge una tupla identificata tramite un ID al cluster
-	 * @param id ID identificatore della tupla
-	 * @return restituisce vero se è stata modificata la struttura del cluster 
+	 * Aggiunge una transazione identificata tramite un ID al cluster
+	 * @param id ID identificatore della transazione
+	 * @return Restituisce <b>true</b> se è stata modificata la struttura del cluster, <b>false</b> altrimenti 
 	 */
 	boolean addData(int id){
 		return clusteredData.add(id);
@@ -43,9 +43,9 @@ class Cluster {
 	}
 	
 	/**
-	 * verifica se una transazione è clusterizzata nel cluster corrente
+	 * Verifica se una transazione è clusterizzata nel cluster corrente
 	 * @param id ID della transazione
-	 * @return vero se la transazione è clusterizzata nel cluster corrente, falso altrimenti
+	 * @return Restituisce <b>true</b> se la transazione è clusterizzata nel cluster corrente, <b>false</b> altrimenti
 	 */
 	boolean contain(int id){
 		return clusteredData.get(id);
@@ -62,9 +62,9 @@ class Cluster {
 	
 	/**
 	 * Restituisce il numero di transazioni nel cluster corrente
-	 * @return numero di transazioni nel cluster
+	 * @return Numero di transazioni nel cluster
 	 */
-	int  getSize(){
+	int getSize(){
 		return clusteredData.size();
 	}
 	

@@ -1,25 +1,23 @@
 /**
- * Classe rappresentante la generica tupla della matrice delle transazioni
+ * Rappresenta la generica transazione della matrice delle transazioni
  */
 class Tuple 
 {
 	//Attributi
-	/** insieme degli attributi che compongono la tupla	 */
+	/** Insieme degli attributi che compongono la transazione	 */
 	private Item[] tuple;
 	
 	//Metodi
-	/**
-	 * costruisce l' oggetto riferito da tuple
-	 * @param size numero di attributi della tupla
+	/** Crea una nuova transazione con numero di attributi dati in input
+	 *  @param size numero di attributi della transazione
 	 */
 	Tuple(int size)
 	{
 		tuple = new Item[size];
 	}
 	
-	/**
-	 * restituisce la lunghezza della tupla
-	 * @return tuple.lenght
+	/** Restituisce la lunghezza della transazione
+	 *  @return numero di attributi che compongono lo schema della transazione
 	 */
 	int getLength()
 	{
@@ -27,9 +25,9 @@ class Tuple
 	}
 	
 	/**
-	 * restituisce lo item in posizione i
-	 * @param i indice del vettore di cui restituire l' item
-	 * @return Item item restituito in posizione i
+	 * Restituisce l'i-esimo Item dello schema della transazione
+	 * @param i Indice dell'Item all'interno dello schema della transazione
+	 * @return I-esimo Item della transazione
 	 */
 	Item get(int i)
 	{
@@ -37,9 +35,9 @@ class Tuple
 	}
 	
 	/**
-	 * memorizza l' item c in posizione i
-	 * @param c item c da memorizzare
-	 * @param i posizione del vettore in cui memorizzare l' item c
+	 * Aggiunge un Item allo schema della transazione
+	 * @param c Item da memorizzare
+	 * @param i Posizione dello schema in cui memorizzare il nuovo Item
 	 */
 	void add(Item c, int i)
 	{
@@ -47,10 +45,10 @@ class Tuple
 	}
 	
 	/**
-	 *  determina la distanza tra la tupla riferita da obj e la tupla corrente (riferita da this). 
-	 *  La distanza è ottenuta come la somma delle distanze tra gli item in posizioni eguali nelle due tuple
-	 * @param obj	seconda tupla
-	 * @return	distanza tra le due tuple
+	 *  Determina la distanza tra la transazione riferita da obj e la transazione corrente (riferita da this). 
+	 *  La distanza è ottenuta come la somma delle distanze tra gli item in posizioni uguali nelle due transazioni
+	 * @param obj	seconda transazione
+	 * @return distanza tra le due transazioni
 	 */
 	double getDistance(Tuple obj)
 	{
@@ -62,11 +60,12 @@ class Tuple
 	}
 	
 	/**
-	 * restituisce la media delle distanze tra la tupla corrente
-	 * e quelle ottenibili dalle righe della matrice in data aventi indice  in clusteredData
+	 * Restituisce la media delle distanze tra la transazione corrente e quelle ottenibili dalle righe 
+	 * della matrice in <b>data</b> aventi indice in <b>clusteredData</b>
 	 * @param data				tabella delle transazioni
-	 * @param clusteredData		lista delle posizioni delle tuple con le quali calcolare la distanza con la tupla corrente
-	 * @return					media delle distanze tra tupla corrente e lista di tuple
+	 * @param clusteredData		lista delle posizioni delle transazioni con le quali calcolare la distanza 
+	 * 							con la transazione corrente
+	 * @return					Media delle distanze tra transazione corrente e lista di tuple
 	 */
 	double avgDistance(Data data, int clusteredData[])
 	{

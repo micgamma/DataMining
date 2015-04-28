@@ -1,4 +1,4 @@
-/** ContinuousAttribute estende la classe Attribute e modella un attributo continuo (numerico). 
+/** Rappresenta un attributo continuo, quindi con dominio infinito. 
  * Tale classe include i metodi per la “normalizzazione” del dominio dell'attributo nell'intervallo [0,1]
  *  al fine da rendere confrontabili attributi aventi domini diversi
  */
@@ -14,7 +14,7 @@ class ContinuousAttribute extends Attribute
 	
 	//Metodi
 	
-	/** Costruttore dell'attributo continuo , inizializza le proprietà dell'attributo continuo
+	/** Crea un attributo continuo, indicandone nome, indice ed estremi del dominio
 	 * 
 	 * @param name			nome dell'attributo continuo
 	 * @param index			indice dell'attributo continuo
@@ -28,7 +28,7 @@ class ContinuousAttribute extends Attribute
 		this.max=max;
 	}
 	
-	/** Restituisce il valore scalare dell'attributo discreto
+	/** Restituisce il valore in input normalizzato
 	 * 
 	 * @param v		valore dell'attributo da normalizzare	
 	 * @return		valore normalizzato

@@ -5,20 +5,18 @@ class QTMiner
 {
 	//Attributi
 	/** 
-	 * Insieme dei cluster individuati dall'algoritmo  
+	 *  Insieme dei cluster individuati dall'algoritmo  
 	 */
 	private ClusterSet C;
-	/**
-	 * Raggio per la definizione dei cluster, viene utilizzato per aggiungere transazioni ad un
-	 * cluster. Se la distanza tra una transazione e il centroide di un cluster è al più uguale al
-	 * raggio, questa viene clusterizzata.
+	/** Raggio per la definizione dei cluster. Viene utilizzato per aggiungere transazioni ad un
+	 *  cluster: se la distanza tra una transazione e il centroide di un cluster è al più uguale al
+	 *  raggio, questa viene clusterizzata.
 	 */
 	private double radius;
 	
 	//Metodi
-	/**
-	 * Costruttore, setta il raggio per l'algoritmo del DataMining
-	 * @param radius raggio per la clusterizzazione
+	/** Costruttore, setta il raggio per l'algoritmo del DataMining
+	 *  @param radius raggio per la clusterizzazione
 	 */
 	QTMiner(double radius)
 	{
@@ -26,9 +24,8 @@ class QTMiner
 		this.radius = radius;
 	}
 	
-	/**
-	 * Restituisce l'insieme dei cluster individuati dall'algoritmo
-	 * @return Insieme dei cluster individuati 
+	/** Restituisce l'insieme dei cluster individuati dall'algoritmo
+	 *  @return Insieme dei cluster individuati 
 	 */
 	ClusterSet getC()
 	{

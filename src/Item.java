@@ -1,16 +1,16 @@
 /**
- *	Classe astratta che modella un generico Item <attributo,valore> 
+ *	Rappresenta la generica coppia <Attributo, Valore>
  */
 abstract class Item 
 {
 	//Attributi
-	/**attributo coinvolto nell'item */
+	/**Attributo coinvolto nell'item */
 	private Attribute attribute;
-	/**valore assegnato all'attributo */
+	/**Valore assegnato all'attributo */
 	private Object value;
 	
 	//Metodi
-	/** inizializza i valori dei membri attributi 
+	/** Crea un nuovo Item con attributo e valore assegnati
 	 * 
 	 * @param attribute attributo dell' oggetto
 	 * @param value valore dell' attributo
@@ -21,26 +21,24 @@ abstract class Item
 		this.value = value;
 	}
 	
-	/**   restituisce  l' attributo
-	 * 
-	 * @return	attribute
+	/** Restituisce l'attributo dell'Item
+	 * @return	Attributo che l'Item rappresenta
 	 */
 	Attribute getAttribute()
 	{
 		return attribute;
 	}
 	
-	/** restituisce value
-	 * 
-	 * @return value
+	/** Restituisce il valore dell'Item
+	 * @return Valore dell'attributo rappresentato dall'Item corrente
 	 */
 	Object getValue()
 	{
 		return value;
 	}
 	
-	/** restituisce la stringa che rappresenta l' oggetto 
-	 * @return value
+	/** Restistuisce la rappresentazione dell'Item mediante il suo valore
+	 * @return Stringa contenente il valore dell'Item
 	 */
 	public String toString()
 	{
@@ -48,11 +46,12 @@ abstract class Item
 	}
 	
 	
-	/** L'implementazione del metodo astratto differisce
-	 * per item discreto e item continuo
+	/** Restituisce la distanza tra due Item 
+	 *  L'implementazione del metodo astratto differisce
+	 *  per item discreto e item continuo
 	 * 
 	 * @param a item da confrontare
-	 * @return distance restituisce la distanza
+	 * @return Restituisce la distanza tra gli Item confrontati
 	 */
 	abstract double distance(Object a);
 

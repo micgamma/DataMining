@@ -1,12 +1,11 @@
 /**
- *	Classe che estende la classe Item 
- *	e rappresenta una coppia <Attributo discreto , valore discreto> 
+ * Rappresenta una coppia <Attributo discreto , valore discreto> 
  */
 class DiscreteItem extends Item
 {
 	//Metodi
 	
-	/** invoca il costruttore della classe madre
+	/** Crea un DiscreteItem con attibuto e valore dati.
 	 * 
 	 * @param attribute attributo discreto dell' oggetto
 	 * @param value valore dell' attributto
@@ -17,11 +16,9 @@ class DiscreteItem extends Item
 	}
 	
 	/**
-	 * restituisce 0 se l' oggetto a  e quello corrente sono uguali
-	 * restituisce 1 altrimenti
-	 * 
-	 * @param a oggetto passato su cui eseguire il confronto con l' oggetto corrente
-	 * @return distance
+	 * Restituisce la distanza tra due DiscreteItem
+	 * @param a Oggetto con cui confrontare l'Item corrente
+	 * @return 	Restituisce <b>0</b> se gli oggetti confrontati sono uguali, <b>1</b> altrimenti.
 	 */
 	double distance(Object a)
 	{

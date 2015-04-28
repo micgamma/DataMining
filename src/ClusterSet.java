@@ -22,7 +22,7 @@ class ClusterSet {
 	
 	/**
 	 * Aggiunge un cluster al ClusterSet
-	 * @param c cluster da aggiungere
+	 * @param c Cluster da aggiungere al ClusterSet corrente
 	 */
 	void add(Cluster c)
 	{
@@ -44,7 +44,7 @@ class ClusterSet {
 	}
 	
 	/**
-	 * Restituisce una stringa fatta dai centroidi di ogni cluster del ClusterSet
+	 * Restituisce una stringa fatta dai centroidi di ogni cluster contenuto nel ClusterSet
 	 * @return Stringa che descrive ogni cluster del ClusterSet indicandone il centroide
 	 */
 	public String toString()
