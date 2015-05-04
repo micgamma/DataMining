@@ -1,8 +1,11 @@
+package mining;
+import data.Data;
+
 /**
  * Insieme dei cluster ottenuti da una tabella delle transazioni
  */
 
-class ClusterSet {
+public class ClusterSet {
 	
 	//Attributi
 	/**

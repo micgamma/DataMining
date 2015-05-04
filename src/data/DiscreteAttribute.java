@@ -1,3 +1,4 @@
+package data;
 /** Rappresenta un attributo discreto, quindi con dominio finito
  */
 class DiscreteAttribute extends Attribute

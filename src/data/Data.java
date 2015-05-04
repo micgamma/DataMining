@@ -1,3 +1,4 @@
+package data;
 /**
  * Modella la tabella delle transazioni
  * fornendo informazioni anche sullo schema della tabella stessa
@@ -16,11 +17,12 @@ public class Data {
 	
 	/**
 	 * Crea una nuova tabella delle transazioni
+	 * @throws EmptyDatasetException 
 	 */
-	Data(){
+	public Data() throws EmptyDatasetException{
 		
 		data = new Object [14][5];
-
+	
 		//Inserimento transazioni nella tabella
 		int i=0;
 		   //Tupla 1
@@ -116,13 +118,16 @@ public class Data {
 		playTennisValues[1]="No";
 						
 		explanatorySet[4] = new DiscreteAttribute("PlayTennis",4, playTennisValues);
-					
+		
+		if(getNumberOfExamples()==0)
+			throw new EmptyDatasetException("Empty Dataset!");
 	}
+	
 	
 	/** Restituisce il numero di transazioni presenti nella tabella delle transazioni
 	 * @return		Numero di transazioni all'interno della tabella
 	 * */
-	int getNumberOfExamples()
+	public int getNumberOfExamples()
 	{
 		return numberOfExamples;
 	}
@@ -130,7 +135,7 @@ public class Data {
 	/**Restituisce il numero di attributi della transazione 
 	 * @return		numero di attributi di cui si compone la transazione
 	 * */
-	int getNumberOfExplanatoryAttributes()
+	public int getNumberOfExplanatoryAttributes()
 	{
 		return explanatorySet.length;
 	}
@@ -141,7 +146,7 @@ public class Data {
 	 * @param attributeIndex		indice dell'attributo della transazione
 	 * @return						valore dell'attributo cercato nella transazione
 	 * */
-	Object getAttributeValue(int exampleIndex, int attributeIndex)
+	public Object getAttributeValue(int exampleIndex, int attributeIndex)
 	{
 		return data[exampleIndex][attributeIndex];
 	}
@@ -185,7 +190,7 @@ public class Data {
 	 * @param index indice della riga da restituire
 	 * @return Tupla contenente i dati della transazione richiesta
 	 */
-	Tuple getItemSet(int index)
+	public Tuple getItemSet(int index)
 	{
 		Tuple tuple=new Tuple(explanatorySet.length);
 		for(int i=0;i<explanatorySet.length;i++)

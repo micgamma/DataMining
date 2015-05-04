@@ -1,3 +1,4 @@
+package data;
 /** Modella il generico attributo di una transazione */
 abstract class Attribute 
 {

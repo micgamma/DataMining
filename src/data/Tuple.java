@@ -1,7 +1,8 @@
+package data;
 /**
  * Rappresenta la generica transazione della matrice delle transazioni
  */
-class Tuple 
+public class Tuple 
 {
 	//Attributi
 	/** Insieme degli attributi che compongono la transazione	 */
@@ -11,7 +12,7 @@ class Tuple
 	/** Crea una nuova transazione con numero di attributi dati in input
 	 *  @param size numero di attributi della transazione
 	 */
-	Tuple(int size)
+	public Tuple(int size)
 	{
 		tuple = new Item[size];
 	}
@@ -19,7 +20,7 @@ class Tuple
 	/** Restituisce la lunghezza della transazione
 	 *  @return numero di attributi che compongono lo schema della transazione
 	 */
-	int getLength()
+	public int getLength()
 	{
 		return tuple.length;
 	}
@@ -29,7 +30,7 @@ class Tuple
 	 * @param i Indice dell'Item all'interno dello schema della transazione
 	 * @return I-esimo Item della transazione
 	 */
-	Item get(int i)
+	public Item get(int i)
 	{
 		return tuple[i];
 	}
@@ -50,7 +51,7 @@ class Tuple
 	 * @param obj	seconda transazione
 	 * @return distanza tra le due transazioni
 	 */
-	double getDistance(Tuple obj)
+	public double getDistance(Tuple obj)
 	{
 		double distance=0;
 		for (int i=0; i < getLength(); i++)
@@ -67,7 +68,7 @@ class Tuple
 	 * 							con la transazione corrente
 	 * @return					Media delle distanze tra transazione corrente e lista di tuple
 	 */
-	double avgDistance(Data data, int clusteredData[])
+	public double avgDistance(Data data, int clusteredData[])
 	{
 		double p=0.0,sumD=0.0;
 		for(int i=0;i<clusteredData.length;i++)

@@ -1,3 +1,8 @@
+package mining;
+import utility.ArraySet;
+import data.Data;
+import data.Tuple;
+
 /**
  * Classe che modella un cluster, un insieme di transazioni aventi 
  * distanza da un centroide al più uguale ad un raggio predefinito.

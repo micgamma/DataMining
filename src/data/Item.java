@@ -1,3 +1,4 @@
+package data;
 /**
  *	Rappresenta la generica coppia <Attributo, Valore>
  */

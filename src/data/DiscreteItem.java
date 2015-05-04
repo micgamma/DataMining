@@ -1,3 +1,4 @@
+package data;
 /**
  * Rappresenta una coppia <Attributo discreto , valore discreto> 
  */

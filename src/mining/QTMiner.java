@@ -1,7 +1,11 @@
+package mining;
+import data.Data;
+import data.Tuple;
+
 /**
  * Classe che si occupa dell'implementazione dell'algoritmo di DataMining
  */
-class QTMiner 
+public class QTMiner 
 {
 	//Attributi
 	/** 
@@ -18,7 +22,7 @@ class QTMiner
 	/** Costruttore, setta il raggio per l'algoritmo del DataMining
 	 *  @param radius raggio per la clusterizzazione
 	 */
-	QTMiner(double radius)
+	public QTMiner(double radius)
 	{
 		C = new ClusterSet();
 		this.radius = radius;
@@ -27,7 +31,7 @@ class QTMiner
 	/** Restituisce l'insieme dei cluster individuati dall'algoritmo
 	 *  @return Insieme dei cluster individuati 
 	 */
-	ClusterSet getC()
+	public ClusterSet getC()
 	{
 		return C;
 	}
@@ -43,27 +47,32 @@ class QTMiner
 	 * @param data Insieme delle transazioni da analizzare
 	 * @return Numero di cluster individuati
 	 */
-	int compute(Data data)
+	public int compute(Data data) throws ClusteringRadiusException
 	{ 
 			int numclusters=0;
 			boolean isClustered[]=new boolean[data.getNumberOfExamples()];
 			for(int i=0;i<isClustered.length;i++)
 			isClustered[i]=false;
 			int countClustered=0;
-			while(countClustered != data.getNumberOfExamples())
-			{
-				//Ricerca cluster più popoloso
-				Cluster c = buildCandidateCluster(data, isClustered);
-				C.add(c); 
-				numclusters++;
-				//Rimuovo tuple clusterizzate da dataset
-				int clusteredTupleId[]=c.iterator();
-				for(int i=0;i<clusteredTupleId.length;i++)
+			
+				while(countClustered != data.getNumberOfExamples())
 				{
-					isClustered[clusteredTupleId[i]]=true;
+					//Ricerca cluster più popoloso
+					Cluster c = buildCandidateCluster(data, isClustered);
+					C.add(c); 
+					numclusters++;
+					//Rimuovo tuple clusterizzate da dataset
+					int clusteredTupleId[]=c.iterator();
+					for(int i=0;i<clusteredTupleId.length;i++)
+					{
+						isClustered[clusteredTupleId[i]]=true;
+					}
+					countClustered += c.getSize();
 				}
-				countClustered += c.getSize();
-			}
+			
+			if(numclusters==1)
+				throw new ClusteringRadiusException(data.getNumberOfExamples() + " tuples in one cluster!");
+				
 			return numclusters;
 	}
 	/**

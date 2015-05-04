@@ -1,9 +1,10 @@
+package utility;
 import java.util.Arrays;
 
 /**
  *	Modella un insieme mediante la realizzazione con array di flag
  */
-class ArraySet {
+public class ArraySet {
 	
 	/** Array di flag */
 	private boolean set[];
@@ -16,7 +17,7 @@ class ArraySet {
 	
 	/** Crea un ArraySet con 50 elementi e lo inizializza a false. La dimensione massima potrà cambiare 
 	 * sfruttando la tecnica del raddoppio */ 
-	ArraySet ()
+	public ArraySet ()
 	{
 		set=new boolean[50];
 		for(int i=0;i<set.length;i++)
@@ -29,7 +30,7 @@ class ArraySet {
 	 * @param i		Elemento dell'ArraySet da inserire cambiando il valore del rispettivo flag a <b>true</b>
 	 * @return		Flag che indica se è stata modificata la struttura del set
 	 */
-	boolean add(int i){
+	public boolean add(int i){
 		if(i>=set.length)
 		{
 			//enlarge the set
@@ -54,7 +55,7 @@ class ArraySet {
 	 * @param i		Indice elemento da eliminare
 	 * @return		Flag che indica se l'elemento è stato eliminato o meno
 	 */
-	boolean delete(int i){
+	public boolean delete(int i){
 		if(i<size){
 			boolean deleted=set[i];
 			set[i]=false;
@@ -78,7 +79,7 @@ class ArraySet {
 	 * @param i		indice del valore di verità ricercato
 	 * @return		valore di verità dell'elemento in posizione i
 	 */
-	boolean get(int i){
+	public boolean get(int i){
 		return set[i];
 	}
 	
@@ -86,7 +87,7 @@ class ArraySet {
 	 * Restituisce il numero di elementi contenuti nell'ArraySet
 	 * @return	cardinalità dell'ArraySet
 	 */
-	int size (){
+	public int size (){
 		return cardinality;
 	}
 	
@@ -95,7 +96,7 @@ class ArraySet {
 	 * che contengono un elemento (valore di verita <b>true</b>)
 	 * @return Insieme delle posizioni contenti valori di verità <b>true</b>
 	 */
-	int[] toArray(){
+	public int[] toArray(){
 		int a[]=new int[0];
 		for(int i=0;i<size;i++){
 			if(get(i)){

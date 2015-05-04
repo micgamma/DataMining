@@ -1,3 +1,4 @@
+package data;
 /** Rappresenta un attributo continuo, quindi con dominio infinito. 
  * Tale classe include i metodi per la “normalizzazione” del dominio dell'attributo nell'intervallo [0,1]
  *  al fine da rendere confrontabili attributi aventi domini diversi
